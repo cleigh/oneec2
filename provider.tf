@@ -3,8 +3,9 @@ provider "aws" {
 }
 
 terraform {
-    backend = "s3"
+    backend "s3" {
     bucket = "alaskantiger"
-    key = ec2/demo1
-    
+    key = "ec2/demo1"
+    region = "us-east-1"
+    }   
 }
