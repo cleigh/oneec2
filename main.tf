@@ -11,8 +11,9 @@ lifecycle {
   instance_type = "t2.small"
 
   # the VPC subnet
-  vpc_id = "var.vpc_id"
-  subnet_id = "var.asubnet-423a350as"
+  // VPC not needed here
+  //vpc_id = "var.vpc_id"
+  subnet_id = "var.subnet_id"
   
 
   # the security group
@@ -22,14 +23,13 @@ lifecycle {
   key_name = "var.key_name"
 
     root_block_device {
-      volume_size = "var.OSDiskSize"
+      volume_size = var.OSDiskSize
       volume_type = "gp2"
       delete_on_termination = true
     }
 
     # user data
-    user_data = templatefile("${path.module}/userdata.tmpl")
-    // , {hostname = "${var.environment_tag}${var.application_tag}"
+   // user_data = templatefile("${path.module}/userdata.tmpl", {hostname = "${var.environment_tag}}")
     
     tags = {
       Name = "appdocker"

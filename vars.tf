@@ -3,7 +3,7 @@ variable "AWS_REGION" {
 }
 
 variable "OSDiskSize" {
-  default = "100"
+  default = 100
   
 }
 
@@ -14,5 +14,11 @@ variable "vpc_id" {
 
 variable "key_name" {
   default = "ec2-key-pair"
+  
+}
+
+
+variable "subnet_id" {
+  default = "subnet-423a350a"
   
 }
