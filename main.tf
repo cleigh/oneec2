@@ -13,14 +13,15 @@ lifecycle {
   # the VPC subnet
   // VPC not needed here
   //vpc_id = "var.vpc_id"
-  subnet_id = "var.subnet_id"
+  //subnet_id = "var.subnet_id"
+  subnet_id = "subnet-423a350a"
   
 
   # the security group
-  vpc_security_group_ids = ["aws_security_group.allow-ssh.id"]
+  //vpc_security_group_ids = ["aws_security_group.allow-ssh.id"]
 
   # the public SSH key
-  key_name = "var.key_name"
+  key_name = "ec2-key-pair"
 
     root_block_device {
       volume_size = var.OSDiskSize

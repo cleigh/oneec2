@@ -1,5 +1,6 @@
 resource "aws_security_group" "allow-ssh" {
-  vpc_id = "var.vpc_id"
+  //vpc_id = "var.vpc_id"
+  vpc_id = "vpc-ec587895"
   name = "allow-ssh"
   description = "security group that allows ssh and all egress traffic"
   egress {
